@@ -1,0 +1,8 @@
+create database primary_key;
+use primary_key;
+create table demo_primary_key1(id int  ,usename nvarchar(50),passwork nvarchar(50),email nvarchar(50));
+alter table demo_primary_key1 add primary key (id);
+create table tung(one_id int not null ,two_id int not null);
+alter table tung add FOREIGN KEY(one_id) REFERENCES demo_primary_key1(id);
+alter table tung add foreign key (two_id) references demo_primary_key(id);
+alter table tung add primary key (one_id);
